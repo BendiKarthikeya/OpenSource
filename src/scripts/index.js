@@ -1,53 +1,72 @@
-// Sample product data
-const products = [
-    { id: 1, name: "Laptop", price: 999, image: "public/laptop.jpg" },
-    { id: 2, name: "Phone", price: 699, image: "public/phone.jpg" },
-    { id: 3, name: "Headphones", price: 199, image: "public/headphone.jpg" },
-];
+document.addEventListener("DOMContentLoaded", () => {
+    loadCartFromStorage(); // Load cart from local storage on page load
 
-let cart = [];
-
-// Load products on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const productGrid = document.getElementById('product-grid');
-    products.forEach(product => {
-        productGrid.innerHTML += `
-            <div class="product-card">
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>$${product.price}</p>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-            </div>
-        `;
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", addToCart);
     });
+
+    updateCartTotal();
 });
 
-// Cart functions
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    cart.push(product);
-    updateCartUI();
+// 🛒 Function to Add Products to Cart
+function addToCart(event) {
+    const product = event.target.closest(".product");
+    const productId = product.getAttribute("data-id");
+    const productName = product.querySelector(".product-name").innerText;
+    const productPrice = parseFloat(product.querySelector(".product-price").innerText.replace("$", ""));
+    const productImage = product.querySelector("img").src;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existingProduct = cart.find(item => item.id === productId);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ id: productId, name: productName, price: productPrice, image: productImage, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
 }
 
-function updateCartUI() {
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const cartCount = document.getElementById('cart-count');
-    
-    cartItems.innerHTML = '';
-    let total = 0;
-    
+// ❌ Function to Remove Items from Cart
+function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
+}
+
+// 🔄 Function to Load Cart from Local Storage
+function loadCartFromStorage() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.querySelector(".cart-items");
+    cartContainer.innerHTML = "";
+
     cart.forEach(item => {
-        cartItems.innerHTML += `<p>${item.name} - $${item.price}</p>`;
-        total += item.price;
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" width="50">
+            <p>${item.name} - $${item.price} (x${item.quantity})</p>
+            <button class="remove-item" data-id="${item.id}">Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
     });
-    
-    cartTotal.textContent = total;
-    cartCount.textContent = cart.length;
+
+    document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", (e) => {
+            removeFromCart(e.target.getAttribute("data-id"));
+        });
+    });
+
+    updateCartTotal();
 }
 
-function closeCart() {
-    document.getElementById('cart-sidebar').classList.remove('active');
+// 💰 Function to Update Cart Total
+function updateCartTotal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    document.querySelector(".cart-total").innerText = `Total: $${total.toFixed(2)}`;
 }
-
-// Open cart 
