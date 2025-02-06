@@ -129,3 +129,16 @@ h2 {
         width: 90%;
     }
 }
+
+.Back-to-home
+{
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
