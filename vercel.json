@@ -1,8 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "routes": [
-    { "src": "/[^.]+", "dest": "/", "status": 200 }
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
   ]
 }
