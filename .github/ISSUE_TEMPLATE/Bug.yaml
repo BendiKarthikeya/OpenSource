@@ -1,0 +1,68 @@
+name: ​🐞 Bug
+description: Report an issue to help us improve the project.
+title: "[BUG] <write a small description here>"
+labels: ["bug", "goal: fix", "priority: medium"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: A brief description of the issue or bug you are facing, also include what you tried and what didn't work.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Solution
+      description: Please propose your solution on this.
+    validations:  # corrected from 'validation'
+      required: true
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      description: Any additional information or Is there anything we should know about this bug?
+    validations:
+      required: false
+  - type: dropdown
+    attributes:
+      label: What browser are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        
+  - type: dropdown
+    attributes:
+      label: Please select your cohort.
+      multiple: true
+      options:
+        - Cohort-1
+        - Cohort-2
+        - Cohort-3
+        - Cohort-4
+        
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Contribution Guidelines"
+      options:
+        - label: "I have searched [existing issues](https://github.com/Jivan052/testing/issues) and this is not a duplicate"
+          required: true
+        - label: "I have read the [Contributing Guidelines](https://github.com/Jivan052/testing/blob/main/CONTRIBUTING.md)"
+          required: true
+        - label: "I would like to implement this feature"
+          required: false
+        - label: "I had mentioned the cohort."
+          required: true  
+          # corrected from 'requred'
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 Thank you for contributing to make our project better!
