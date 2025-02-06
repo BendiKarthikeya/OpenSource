@@ -1,0 +1,64 @@
+name: ​⚡Optimization
+description: Suggest performance or code quality improvements
+title: "[⚡Optimization]: <write a small description here>"
+labels: ["Optimization", "goal: optimize", "priority: medium"]
+body:
+  - type: textarea
+    attributes:
+      label: 🔍 What needs optimization?
+      description: Specify which part of the code should be improved.
+      placeholder: The function XYZ is inefficient because...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes: 
+      label: 💡Suggested Solution
+      description: Explain how the code can be optimized.
+      placeholder: We can use a different algorithm to improve efficiency...
+    validations:
+      required: true
+      
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+      placeholder: Specify which part of the code should be improved.
+    validations:
+      required: false
+      
+  - type: textarea
+    attributes:
+      label: 📌 Additional Context
+      description: Any additional information or provide performance benchmarks or references.
+    validations:
+      required: false
+
+  - type: dropdown
+    attributes:
+      label: Please select your cohort.
+      multiple: true
+      options:
+        - Cohort-1
+        - Cohort-2
+        - Cohort-3
+        - Cohort-4
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Contribution Guidelines"
+      options:
+        - label: "I have searched [existing issues](https://github.com/Jivan052/testing/issues) and this is not a duplicate"
+          required: true
+        - label: "I have read the [Contributing Guidelines](https://github.com/Jivan052/testing/blob/main/CONTRIBUTING.md)"
+          required: true
+        - label: "I would like to implement this feature"
+          required: false
+        - label: "I had mentioned the cohort."
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 Thank you for contributing to make our project better!
