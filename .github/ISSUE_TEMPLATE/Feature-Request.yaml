@@ -1,0 +1,74 @@
+name: "✨ Feature Request"
+description: "Suggest a new feature to enhance our project"
+title: "[FEATURE] "
+labels: ["enhancement", "triage-needed", "priority: High"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Feature Request
+        Thanks for taking the time to suggest a new feature! 
+        Please fill out the information below to help us understand your suggestion better.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem Statement"
+      description: "What problem does this feature solve?"
+      placeholder: "I'm always frustrated when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed Solution"
+      description: "Describe the solution you'd like"
+      placeholder: "It would be great if..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots or Mockups"
+      description: "Add any relevant screenshots, mockups or examples"
+      placeholder: "Drag and drop images here..."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "🔗 Additional Context"
+      description: "Add any relevant links or references here."
+      placeholder: "For example, related GitHub issues, PRs, or external documentation."
+      
+  - type: dropdown
+    attributes:
+      label: Please select your cohort.
+      multiple: true
+      options:
+        - Cohort-1
+        - Cohort-2
+        - Cohort-3
+        - Cohort-4
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Contribution Guidelines"
+      options:
+        - label: "I have searched [existing issues](https://github.com/Jivan052/testing/issues) and this is not a duplicate"
+          required: true
+        - label: "I have read the [Contributing Guidelines](https://github.com/Jivan052/testing/blob/main/CONTRIBUTING.md)"
+          required: true
+        - label: "I would like to implement this feature"
+          required: false
+        - label: "I had mentioned the cohort."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 Thank you for contributing to make our project better!
