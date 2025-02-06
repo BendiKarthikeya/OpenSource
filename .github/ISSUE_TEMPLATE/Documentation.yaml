@@ -1,0 +1,78 @@
+name: "📚 Documentation Update"
+description: "Help us improve our documentation"
+title: "[DOCUMENTATION] "
+labels: ["documentation", "needs-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! 📖
+        Please fill out the information below to help us understand your suggestion better.
+
+  - type: textarea
+    id: current_docs
+    attributes:
+      label: "Current Documentation"
+      description: "What's currently in the documentation that needs to be updated?"
+      placeholder: "Example: The installation guide is missing steps for Windows setup..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_change
+    attributes:
+      label: "Suggested Changes"
+      description: "What changes would you like to see?"
+      placeholder: "Example: Add Windows-specific installation steps..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots or Examples"
+      description: "Add screenshots or examples if applicable"
+      placeholder: "Drag and drop images here..."
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: "Documentation Type"
+      options:
+        - Installation Guide
+        - API Reference
+        - Tutorials
+        - README
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Please select your cohort.
+      multiple: true
+      options:
+        - Cohort-1
+        - Cohort-2
+        - Cohort-3
+        - Cohort-4
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Contribution Guidelines"
+      options:
+        - label: "I have searched [existing issues](https://github.com/Jivan052/testing/issues) and this is not a duplicate"
+          required: true
+        - label: "I have read the [Contributing Guidelines](https://github.com/Jivan052/testing/blob/main/CONTRIBUTING.md)"
+          required: true
+        - label: "I would like to implement this feature"
+          required: false
+        - label: "I had mentioned the cohort."
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        💡 Thank you for contributing to make our project better!
