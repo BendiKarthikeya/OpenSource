@@ -44,20 +44,38 @@ nav ul li a {
   padding: 20px;
   text-align: center;
 }
-.product img {
-  height: 200px;
-  width: 300px;
+.product img{
+    height: 150px;
+    width: 200px;
+
 }
 
 .product-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
 .product {
-  border: 1px solid #ddd;
-  padding: 10px;
+    
+    width: 280px;
+    height: 320px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.product:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
 }
 
 footer {
