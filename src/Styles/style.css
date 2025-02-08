@@ -1,68 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0d1b2a;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d1b2a;
 }
 
 header {
-    background: #778da9;
-    color: white;
-    padding: 10px;
-    text-align: center;
+  background: #778da9;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin-right: -40px;
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+  display: inline;
+  margin: 0 10px;
+  padding: 5px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .hero {
-    text-align: center;
-    padding: 50px;
-    background: #f4f4f4;
+  text-align: center;
+  padding: 50px;
+  background: #f4f4f4;
 }
 
 .products {
-    padding: 20px;
-    text-align: center;
-    
+  padding: 20px;
+  text-align: center;
 }
-.product img{
-    height: 200px;
-    width: 300px;
-
+.product img {
+  height: 200px;
+  width: 300px;
 }
 
 .product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .product {
-    border: 1px solid #ddd;
-    padding: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
 }
