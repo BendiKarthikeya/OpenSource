@@ -29,5 +29,6 @@ We welcome contributions from developers worldwide. Please follow these steps to
 │ ├── /**styles** # CSS files (styling)<br>
 │ └── /**scripts** # JavaScript files (functionalities)<br>
 │<br>
+|── **index.html** # Main Html file<br>
 ├── **README.md** # Project Documentation<br>
 └── **CONTRIBUTING.md** # Contribution Guidelines<br>
