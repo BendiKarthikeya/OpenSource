@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="./src/Styles/searchbar.css" />
+    <link rel="stylesheet" href="./src/Styles/login.css" />
   </head>
   <body>
     <header>
@@ -31,9 +32,19 @@
           <li><a href="/src/Html/products.html">Products</a></li>
           <li><a href="/src/Html/cart.html">Cart</a></li>
         </ul>
+        <!-- & login  -->
+        <div class="loginContainer">
+          <button id="loginBtn">Login</button>
+          <div class="profileContainer">
+            <i class="bi bi-person" id="profileIcon"></i>
+            <div class="tooltip" id="logoutTooltip">
+              <button id="logoutBtn">Logout</button>
+            </div>
+          </div>
+        </div>
+        <!--& login ends here -->
       </nav>
     </header>
-
     <main>
       <section class="hero">
         <h2>Welcome to OpenSource</h2>
@@ -62,10 +73,54 @@
     <footer>
       <p>&copy; 2025 OpenSource. All rights reserved.</p>
     </footer>
+    <!--  -->
+    <!-- This is a separate section; it doesn't have any relation to the main code above -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="form-container">
+        <p class="title">Login</p>
+        <form class="form" id="loginForm">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="" />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="" />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="" />
+            <div class="forgot">
+              -----------------------------------------------------
+            </div>
+          </div>
+          <button type="button" class="sign" id="loginSubmit">Sign in</button>
+        </form>
+        <div class="social-message">
+          <div class="line"></div>
+          <p class="message">Login with social accounts</p>
+          <div class="line"></div>
+        </div>
+        <div class="social-icons">
+          <!-- ...social icons... -->
+        </div>
+        <p class="signup">
+          Don't have an account?
+          <a rel="noopener noreferrer" href="#" id="registerLink">Sign up</a>
+        </p>
+      </div>
+    </div>
+    <!-- login modal ends here -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
     <script src="./src/Scripts/index.js"></script>
+    <script src="./src/Scripts/Auth/login.js"></script>
   </body>
 </html>
