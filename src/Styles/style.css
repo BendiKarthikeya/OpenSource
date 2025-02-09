@@ -61,7 +61,7 @@ nav ul li a {
 .product {
     
     width: 280px;
-    height: 320px;
+    height: 340px;
     background: white;
     border-radius: 15px;
     padding: 20px;
@@ -83,4 +83,27 @@ footer {
   padding: 10px;
   background: #333;
   color: white;
+}
+
+.discount{
+  color: red;
+}
+
+.contentss ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.contentss ul li{
+  text-decoration: none;
+  color: white; 
+  transition: color 0.03s ease;
+}
+
+.contentss ul li:hover a {
+  color: black;
+  transform: translate(40px, 0px);
+  transition: 0.5s;
 }
