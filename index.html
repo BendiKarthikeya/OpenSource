@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="./src/Styles/searchbar.css" />
     <link rel="stylesheet" href="./src/Styles/login.css" />
+    <link rel="stylesheet" href="./src/Styles/style.css" />
   </head>
   <body>
     <header class="container-fluid">
@@ -29,14 +30,16 @@
         </div>
 
         <!-- &searchbar ends here -->
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="/src/Html/products.html">Products</a></li>
-          <li><a href="/src/Html/cart.html">Cart</a></li>
-        </ul>
+         <div class="contentss">
+           <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="./src/Html/products.html">Products</a></li>
+             <li><a href="./src/Html/cart.html">Cart</a></li>
+           </ul>
+         </div>
         <!-- & login  -->
         <div class="loginContainer">
-          <button id="loginBtn">Login</button>
+          <button class="loginn" id="loginBtn">Login</button>
           <div class="profileContainer">
             <i class="bi bi-person" id="profileIcon"></i>
             <div class="tooltip" id="logoutTooltip">
@@ -54,32 +57,45 @@
       </section>
 
       <section class="container-fluid products">
-        <h2>Featured Products</h2>
+        
+        <h2 class="text-white">Featured Products</h2>
         <div class="product-list">
           <div class="product">
             <img src="./public/images/laptop.jpg" alt="Product 1" />
-            <h3 class="">Product 1</h3>
-            <p class="text-primary fw-bold">$10.00</p>
-            <button class="btn btn-outline-primary mb-3">Add to Cart</button>
-          </div>
-          <div class="product">
 
-            <img src="./public/images/phone.jpg" alt="Product 2" />
-            <h3>Product 2</h3>
-            <p class="text-primary fw-bold">$15.00</p>
+            <h3 class="">Macbook Air 1</h3>
+           <p class="text-secondary"><span class="discount">-30%</span>&nbsp;$<del>1,999</del> <br>
+               <span class="text-primary fw-bold fs-5">$1,399</span>
+            </p>
+      
+            <button class="btn btn-outline-primary  mb-3">Add to Cart</button>
+          </div>
+          <div class="product ">
+            <img src="./public/images/iphone" alt="Product 2" />
+            <h3>Iphone 15 Pro</h3>
+            <p class="text-secondary"><span class="discount">-57%</span>&nbsp;$<del>1,299</del> <br>
+              <span class="text-primary fw-bold fs-5">$549</span>
+           </p>
             <button class="btn btn-outline-primary mb-3">Add to Cart</button>
           </div>
+          
           <div class="product">
             <img src="./public/images/headphones.jpg" alt="Headphones" />
             <h3>Headphones</h3>
-            <p class="text-primary fw-bold">$25.00</p>
+            <p class="text-secondary"><span class="discount">-57%</span>&nbsp;$<del>1,299</del> <br>
+              <span class="text-primary fw-bold fs-5">$25.00</span>
+           </p>
             <button class="btn btn-outline-primary mb-3">Add to Cart</button>
           </div>
+          
           <div class="product">
-            <img src="./public/images/tablet.jpg" alt="Tablet" />
-            <h3>Tablet</h3>
-            <p class="text-primary fw-bold">$30.00</p>
-            <button class="btn btn-outline-primary mb-3">Add to Cart</button>
+            <img src="./public/images/smart-watch.jpg" alt="Product 1" />
+
+            <h3 class="">Smart Watch</h3>
+            <p class="text-secondary"><span class="discount">-45%</span>&nbsp;$<del>599</del> <br>
+              <span class="text-primary fw-bold fs-5">$319</span>
+           </p>
+            <button class="btn btn-outline-primary  mb-3">Add to Cart</button>
           </div>
         </div>
       </section>
